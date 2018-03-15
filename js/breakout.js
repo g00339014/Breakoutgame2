@@ -19,5 +19,12 @@ function draw () {
 	drawBall();
 	x += dx;
 	y += dy;
+	if(y+ dy > canvas.height-ballRadius || y+dy <ballRadius){
+		dy=-dy;
+	}
+	if(x+dx > canvas.width-ballRadius || x+dx <ballRadius){
+		dx=-dx;
+	}
+	
 }
 setInterval(draw, 10);
