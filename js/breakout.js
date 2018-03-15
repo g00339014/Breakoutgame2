@@ -40,15 +40,17 @@ function draw () {
 	x += dx;
 	y += dy;
 	
-	if(y+ dy > canvas.height-ballRadius || y+dy < ballRadius){
-		dy=-dy;
-		
+	// ball bounce
+	if(x + dx > canvas.width-ballRadius || x+dx < ballRadius) {
+		dx = -dx;
 	}
 	
-	if(x+dx > canvas.width-ballRadius || x+dx <ballRadius){
-		dx=-dx;
-		
-	}
+	if(y + dy < ballRadius) {
+		dy = -dy;
+	} else if(y + dy > canvas.height-ballRadius) {
+		alert("GAME OVER");
+		document.location.reload();
+	}	
 	
 	if(rightPressed && paddleX < canvas.width-paddleWidth) {
 		paddleX += 3;
