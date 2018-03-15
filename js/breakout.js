@@ -34,6 +34,9 @@ for(c=0; c<brickColumnCount; c++) {
 	}
 }
 
+//score
+var score = 0;
+
 
 function drawBall() {
 	ctx.beginPath();
@@ -74,6 +77,7 @@ function draw () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBall();
 	drawPaddle();
+	drawScore();
 	collisionDetect();
 	drawBricks();
 	x += dx;
@@ -143,6 +147,14 @@ function collisionDetect() {
 			}
 		}
 	}
+}
+
+//score function
+function drawScore() {
+	ctx.font = "16px Ariel";
+	ctx.fillStyle = "#0095DD";
+	ctx.fillText("Score: "+score, 8, 20);
+	document.getElementById("gamescore").innerHTML = "Score: " + score;
 }
 
 setInterval(draw, 10);
