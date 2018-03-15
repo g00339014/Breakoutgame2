@@ -144,6 +144,10 @@ function collisionDetect() {
 					dy = -dy;
 					b.status = 0;
 					score+=10;
+					if(score == brickRowCount*brickColumnCount*10) {
+						alert("You Win! Congratulations!");
+						document.location.reload();
+					}
 				}
 			}
 		}
