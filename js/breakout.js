@@ -50,6 +50,8 @@ function draw () {
 	} else if(y + dy > canvas.height-ballRadius) {
 		
 		if(x > paddleX && x < paddleX + paddleWidth) {
+			//paddle speed up
+			dy++;
 			dy = -dy;
 		}
 		else{
