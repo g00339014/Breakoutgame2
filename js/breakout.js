@@ -4,7 +4,7 @@ var ballRadius = 10;
 
 //draw paddle
 var paddleHeight = 10;
-var paddleWidth = 75;
+var paddleWidth = 50;
 var paddleX = (canvas.width-paddleWidth)/2;
 
 //draw bricks
@@ -20,7 +20,7 @@ var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
-var ballColour = "#0095DD"
+var ballColour = "red"
 
 var rightPressed = false;
 var leftPressed = false;
@@ -49,7 +49,7 @@ var gameOverSound = new Audio('sounds/gameover.wav');
 function drawBall() {
 	ctx.beginPath();
 	ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "red";
 	ctx.fill();
 	ctx.closePath();
 }
@@ -57,7 +57,7 @@ function drawBall() {
 function drawPaddle() {
 	ctx.beginPath();
 	ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "#3371FF";
 	ctx.fill();
 	ctx.closePath();
 }
@@ -73,7 +73,7 @@ function drawBricks() {
 				bricks[c][r].y = brickY;
 				ctx.beginPath();
 				ctx.rect(brickX, brickY, brickWidth, brickHeight);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#3371FF";
 				ctx.fill();
 				ctx.closePath;
 			}
@@ -179,7 +179,7 @@ function collisionDetect() {
 //score function
 function drawScore() {
 	ctx.font = "16px Ariel";
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "red";
 	ctx.fillText("Score: "+score, 8, 20);
 	document.getElementById("gamescore").innerHTML = "Score: " + score;
 }
@@ -187,7 +187,7 @@ function drawScore() {
 //lives function
 function drawLives() {
 	ctx.font = "16px Ariel";
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "red";
 	ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 	document.getElementById("gamelives").innerHTML = "Lives: "+lives;
 }
